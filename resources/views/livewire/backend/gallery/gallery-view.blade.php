@@ -14,7 +14,7 @@
             </div>
             <div class="flex gap-3">
                 @if(!$selectedGallery)                
-                    <flux:button href="{{ route('gallery.manage') }}" size="sm">Gallery Manage</flux:button>  
+                    <flux:button wire:navigate href="{{ route('gallery.manage') }}" size="sm">Gallery Manage</flux:button>  
                 @endif
                 @if($selectedGallery)
                 <flux:button wire:click="$set('addingPhoto', true)" size="sm"> Add Photo</flux:button> 

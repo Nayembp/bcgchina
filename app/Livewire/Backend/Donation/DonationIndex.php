@@ -17,7 +17,8 @@ class DonationIndex extends Component
     {
         $query = UserDonation::query();
         $user = Auth::user();
-        if (!in_array($user->role, ['admin', 'super-admin'])) {
+
+        if (!$user->hasAnyRole(['admin', 'super-admin'])) {
             $query->where('user_id', $user->id);
         }
 

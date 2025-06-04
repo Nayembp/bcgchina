@@ -58,7 +58,7 @@ class ActivityCreate extends Component
         $this->resetErrorBag();
 
 
-        return redirect()->route('activity.type.index');
+        return redirect()->route('activity.index');
     }
 }
 

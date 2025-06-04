@@ -41,7 +41,7 @@
         <table class="min-w-full table-auto">
           <thead class="border-y border-gray-100 py-3 dark:border-gray-800">
             <tr>
-              <th class="py-3 font-normal text-left whitespace-nowrap"> Theme </th>
+              <th class="py-3 font-normal text-left whitespace-nowrap"> Image </th>
               <th class="py-3 font-normal text-center whitespace-nowrap"> Event Name </th>
               <th class="py-3 font-normal text-center whitespace-nowrap">Theme Music</th>
               <th class="py-3 font-normal text-center whitespace-nowrap"> Note </th>        
@@ -81,12 +81,12 @@
                 </td>
                 
                 <td class="py-4 px-3 whitespace-nowrap text-gray-800 dark:text-white">
-                  
-                    <flux:field variant="inline">
+                  {{ $event->note }}
+                    {{-- <flux:field variant="inline">
                       <flux:switch :checked="$event->is_active = true" wire:click="toggleStatus({{ $event->id }})" />
                         <flux:error name="status" />
-                      </flux:field>                  
-                  </td>
+                      </flux:field>                   --}}
+                </td>
               
                 
                 <td class="py-4 px-3 whitespace-nowrap">

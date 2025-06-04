@@ -28,19 +28,14 @@ class DayCreate extends Component
     {
         $this->validateOnly('bg_music');
         $this->musicUploaded = false;
-        
-        // Simulate upload progress (in real app, this would come from JavaScript)
         $this->uploadProgress = 0;
-        
-        // Fake progress for demo - in real app use Livewire's upload events
         $this->progressSimulator();
     }
 
     protected function progressSimulator()
     {
-        // This is just for demo - in production, Livewire handles this automatically
         $steps = 10;
-        $interval = 100; // milliseconds
+        $interval = 100;
         
         for ($i = 1; $i <= $steps; $i++) {
             usleep($interval * 1000);
@@ -55,7 +50,6 @@ class DayCreate extends Component
     {
         $validated = $this->validate();
 
-        // Only proceed if music is uploaded
         if (!$this->musicUploaded) {
             $this->dispatch('toast', message: 'Please complete music upload first!', type: 'error');
             return;
@@ -69,7 +63,7 @@ class DayCreate extends Component
 
         $this->dispatch('toast', message: 'National Day Created!', type: 'success');
         $this->reset();
-        return redirect()->route('activity.index');
+        return redirect()->route('national.day.index');
     }
 
     public function render()
